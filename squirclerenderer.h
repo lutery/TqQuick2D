@@ -27,6 +27,7 @@ public slots:
 
 private:
     QOpenGLTexture* mTexture;
+    QOpenGLTexture* mTextures[5];
     QSize m_viewportSize;
     qreal m_t;
     QOpenGLShaderProgram *m_program;

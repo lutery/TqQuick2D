@@ -5,14 +5,21 @@ SquircleRenderer::~SquircleRenderer()
     delete m_program;
     delete mpImage;
     delete mTexture;
+
+    for (int i = 0; i < 5; ++i)
+    {
+        delete mTextures[i];
+    }
 }
 
 void SquircleRenderer::initTexture()
 {
     mpImage = new QImage();
-    mpImage->load(":/images/Resource/Zero.jpg");
+    mpImage->load(":/images/Resource/Zero0.jpg");
 
     mTexture = new QOpenGLTexture(*mpImage);
+
+    memset(mTextures, 0, sizeof(mTextures));
 }
 
 void SquircleRenderer::paint()
