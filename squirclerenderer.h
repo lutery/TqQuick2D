@@ -22,11 +22,14 @@ public:
 signals:
 
 public slots:
-    void initTexture();
+    void init();
     void paint();
 
+protected:
+    void initTexture();
+
 private:
-    QOpenGLTexture* mTexture;
+//    QOpenGLTexture* mTexture;
     QOpenGLTexture* mTextures[5];
     QSize m_viewportSize;
     qreal m_t;

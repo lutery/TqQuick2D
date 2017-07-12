@@ -22,6 +22,7 @@ void Squircle::sync()
     {
         m_renderer = new SquircleRenderer();
         connect(window(), &QQuickWindow::beforeRendering, m_renderer, &SquircleRenderer::paint, Qt::DirectConnection);
+        m_renderer->init();
     }
     m_renderer->setViewportSize(window()->size() * window()->devicePixelRatio());
     m_renderer->setT(m_t);
